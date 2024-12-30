@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainer Bot</title>
+</head>
+<body>
+    <h1>Ask the Trainer Bot</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="user_input">Enter your question:</label>
+        <input type="text" name="user_input" id="user_input" placeholder="Enter your workout-related question">
+        <button type="submit">Ask</button>
+    </form>
+
+    {% if response %}
+        <h2>Response:</h2>
+        <p>{{ response }}</p>
+    {% endif %}
+</body>
+</html>
